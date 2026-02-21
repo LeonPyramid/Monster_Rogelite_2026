@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://4w0j75v5mir4"]
+
+[ext_resource type="PackedScene" uid="uid://bavdwy5up2dyy" path="res://sprites/PJ/PJvox1.glb" id="1_wbm50"]
+[ext_resource type="Texture2D" uid="uid://db2gfse0okqtm" path="res://sprites/PJ/PJvox1_0.png" id="2_pd8af"]
+[ext_resource type="Texture2D" uid="uid://bwlbrho4hgre" path="res://sprites/PJ/PJvox1_1.png" id="3_eh6bh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmd7p"]
+resource_name = "PJvox1_Mat_Transparent"
+transparency = 4
+albedo_texture = ExtResource("2_pd8af")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = ExtResource("3_eh6bh")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_eh6bh")
+backlight = Color(0.9615945, 0, 0.5011701, 1)
+refraction_scale = -1.0
+texture_filter = 0
+texture_repeat = false
+
+[node name="PJvox1" unique_id=1386424991 instance=ExtResource("1_wbm50")]
+
+[node name="PJvox1_Node" parent="." index="0" unique_id=1565122085]
+surface_material_override/1 = SubResource("StandardMaterial3D_bmd7p")
