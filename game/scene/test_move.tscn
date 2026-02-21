@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xsqdwed3w3m6" path="res://icon.svg" id="1_4j6bq"]
 [ext_resource type="Script" uid="uid://ypbp7dw05nij" path="res://scripts/Player.gd" id="2_mjh5y"]
 [ext_resource type="Texture2D" uid="uid://b3pqlx3m3myib" path="res://sprites/PJ/MainChar.png" id="3_ewqw7"]
+[ext_resource type="PackedScene" uid="uid://bavdwy5up2dyy" path="res://sprites/PJ/PJvox1.glb" id="4_mjpqs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewqw7"]
 
@@ -28,3 +29,6 @@ texture = ExtResource("3_ewqw7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=921396422]
 shape = SubResource("CapsuleShape3D_ewqw7")
+
+[node name="PJvox1" parent="." unique_id=735561483 instance=ExtResource("4_mjpqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9059682, 0, -9.486034)
