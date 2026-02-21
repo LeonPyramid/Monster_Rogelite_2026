@@ -5,6 +5,9 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_mjh5y"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mjh5y"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewqw7"]
 
 [node name="Node3D" type="Node3D" unique_id=1877921191]
@@ -25,7 +28,7 @@ script = ExtResource("2_mjh5y")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player" unique_id=589711981]
 layers = 4
-texture = ExtResource("1_4j6bq")
+texture = SubResource("CompressedTexture2D_mjh5y")
 
 [node name="Camera3D" type="Camera3D" parent="Player/Sprite3D" unique_id=1889891793]
 transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0, 2.5, 3)
