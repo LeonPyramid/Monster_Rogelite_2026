@@ -3,28 +3,56 @@
 [ext_resource type="Texture2D" uid="uid://xsqdwed3w3m6" path="res://icon.svg" id="1_4j6bq"]
 [ext_resource type="Script" uid="uid://ypbp7dw05nij" path="res://scripts/Player.gd" id="2_mjh5y"]
 [ext_resource type="Texture2D" uid="uid://b3pqlx3m3myib" path="res://sprites/PJ/MainChar.png" id="3_ewqw7"]
+[ext_resource type="ArrayMesh" uid="uid://bopvojhdso0dj" path="res://sprites/PJ/PJvox1.vox" id="4_mjpqs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewqw7"]
+radius = 0.18469238
+height = 0.36938477
 
 [node name="Node3D" type="Node3D" unique_id=1877921191]
 
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1779032917]
+transform = Transform3D(1, 0, 0, 0, -0.010471792, 0.99994516, 0, -0.99994516, -0.010471792, 0, 1.9607637, 0)
+layers = 3
+light_color = Color(1, 0, 0, 1)
+light_energy = 10.946
+shadow_enabled = true
+spot_range = 9.278
+spot_angle = 54.2
+spot_angle_attenuation = 0.5547849
+
 [node name="ground" type="Sprite3D" parent="." unique_id=1020737228]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 10, 0, -10, -4.371139e-07, 0, 0, 0)
+gi_mode = 2
+shaded = true
+double_sided = false
 texture_filter = 0
 render_priority = -1
 texture = ExtResource("1_4j6bq")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1397313091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 script = ExtResource("2_mjh5y")
 acceleration = 50.0
+dash_speed = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1889891793]
 transform = Transform3D(1, 0, 0, 0, 0.6427877, 0.76604444, 0, -0.76604444, 0.6427877, 0, 1.5, 1.5)
 
 [node name="Sprite3D" type="Sprite3D" parent="Player" unique_id=589711981]
+visible = false
 layers = 4
+gi_mode = 2
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_ewqw7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=921396422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0032958984, 0)
 shape = SubResource("CapsuleShape3D_ewqw7")
+debug_color = Color(0.67058825, 0.50980395, 0, 0.84705883)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=2007834791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+gi_mode = 2
+mesh = ExtResource("4_mjpqs")
