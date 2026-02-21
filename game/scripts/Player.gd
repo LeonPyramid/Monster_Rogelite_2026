@@ -9,12 +9,15 @@ extends CharacterBody3D
 
 @export var dash_speed:float = 100.0
 
+@export var dash_decelatation_time = 1.0
+
 var target_velocity = Vector3.ZERO
 
-
+var _cur_max_speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_cur_max_speed = max_speed
 	pass # Replace with function body.
 
 func _physics_process(delta):
@@ -24,8 +27,10 @@ func _physics_process(delta):
 		velocity += Vector3(input_dir.x,0,input_dir.y) * _adjusted_acceleration(delta)
 		if Input.is_action_just_pressed("dash"):
 			print_debug("dashed")
-			velocity += Vector3(input_dir.x,0,input_dir.y) * dash_speed
-	
+			velocity = Vector3(input_dir.x,0,input_dir.y) * dash_speed
+			_cur_max_speed = max_speed + dash_speed
+			create_tween().tween_property(self, "_cur_max_speed", max_speed, dash_decelatation_time)
+
 	else:
 		# Reduce the length of our velocity vector by a linear amount each frame, based on our
 		# "adjusted acceleration". If this number ever goes into the negative, we'd reverse direction
@@ -34,11 +39,7 @@ func _physics_process(delta):
 		var new_length = max(0, velocity.length() - _adjusted_acceleration(delta))
 		velocity = velocity.normalized() * new_length
 	# Don't exceed the maximum speed
-	if Input.is_action_just_pressed("dash"):
-		velocity = velocity.limit_length(max_speed+dash_speed)
-		
-	else:
-		velocity = velocity.limit_length(max_speed)
+	velocity = velocity.limit_length(_cur_max_speed)
 
 	# Moving the Character
 	#velocity = target_velocity
