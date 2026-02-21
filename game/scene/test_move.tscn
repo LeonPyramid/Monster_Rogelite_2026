@@ -2,11 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://xsqdwed3w3m6" path="res://icon.svg" id="1_4j6bq"]
 [ext_resource type="Script" uid="uid://ypbp7dw05nij" path="res://scripts/Player.gd" id="2_mjh5y"]
+[ext_resource type="Texture2D" uid="uid://6q3g6gov0vsl" path="res://sprites/PJ/MainChar.jpeg" id="3_ewqw7"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_mjh5y"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mjh5y"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewqw7"]
 
@@ -28,7 +26,7 @@ script = ExtResource("2_mjh5y")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player" unique_id=589711981]
 layers = 4
-texture = SubResource("CompressedTexture2D_mjh5y")
+texture = ExtResource("3_ewqw7")
 
 [node name="Camera3D" type="Camera3D" parent="Player/Sprite3D" unique_id=1889891793]
 transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0, 2.5, 3)
