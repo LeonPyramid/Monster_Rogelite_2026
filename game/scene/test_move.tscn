@@ -16,6 +16,7 @@ texture = ExtResource("1_4j6bq")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1397313091]
 script = ExtResource("2_mjh5y")
+acceleration = 50.0
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1889891793]
 transform = Transform3D(1, 0, 0, 0, 0.6427877, 0.76604444, 0, -0.76604444, 0.6427877, 0, 1.5, 1.5)
