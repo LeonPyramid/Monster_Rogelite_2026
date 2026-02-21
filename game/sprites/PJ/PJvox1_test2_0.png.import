@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db2gfse0okqtm"
-path.s3tc="res://.godot/imported/PJvox1_0.png-0729e39cc9814c840fd9ac8a7f7a84a7.s3tc.ctex"
+uid="uid://cmxipfdeluid6"
+path.s3tc="res://.godot/imported/PJvox1_test2_0.png-ecf1150447931e5461a3c437ff7376f4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://sprites/PJ/PJvox1_0.png"
-dest_files=["res://.godot/imported/PJvox1_0.png-0729e39cc9814c840fd9ac8a7f7a84a7.s3tc.ctex"]
+source_file="res://sprites/PJ/PJvox1_test2_0.png"
+dest_files=["res://.godot/imported/PJvox1_test2_0.png-ecf1150447931e5461a3c437ff7376f4.s3tc.ctex"]
 
 [params]
 

@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bavdwy5up2dyy"
-path="res://.godot/imported/PJvox1.glb-3291033a685adfb25bb5372e247c6ccd.scn"
+uid="uid://c1tvg4qejuv4m"
+path="res://.godot/imported/PJvox1_test.glb-e804e2a49090a71fff9db000127c4a29.scn"
 
 [deps]
 
-source_file="res://sprites/PJ/PJvox1.glb"
-dest_files=["res://.godot/imported/PJvox1.glb-3291033a685adfb25bb5372e247c6ccd.scn"]
+source_file="res://sprites/PJ/PJvox1_test.glb"
+dest_files=["res://.godot/imported/PJvox1_test.glb-e804e2a49090a71fff9db000127c4a29.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"PJvox1_PJvox1_Mesh": {
+"PJvox1_test_PJvox1_test_Mesh": {
 "generate/lightmap_uv": 1,
 "generate/lods": 1,
 "generate/shadow_meshes": 1,
