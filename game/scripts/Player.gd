@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export_category("Movement")
+@export_group("Movement")
 # How fast the player moves in meters per second.
 @export var max_speed = 14
 
