@@ -15,6 +15,12 @@ var target_velocity = Vector3.ZERO
 
 var _cur_max_speed
 
+@export_group("Smoke")
+
+@export var smoke_particle:Mesh
+
+var some_particle_list:Array[MeshInstance3D]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_cur_max_speed = max_speed
@@ -22,10 +28,10 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	# We create a local variable to store the input direction.
-	var input_dir :=  Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var input_dir :=  Input.get_vector("move_left", "move_right", "move_up", "move_down").rotated(deg_to_rad(-45))
 	if input_dir != Vector2.ZERO:
 		velocity += Vector3(input_dir.x,0,input_dir.y) * _adjusted_acceleration(delta)
-		if Input.is_action_just_pressed("dash"):
+		if Input.is_action_just_pressed("dash") && _cur_max_speed == max_speed:
 			print_debug("dashed")
 			velocity = Vector3(input_dir.x,0,input_dir.y) * dash_speed
 			_cur_max_speed = max_speed + dash_speed

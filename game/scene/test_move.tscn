@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ccxhci2jaaf5q"]
 
 [ext_resource type="Script" uid="uid://ypbp7dw05nij" path="res://scripts/Player.gd" id="2_mjh5y"]
-[ext_resource type="PackedScene" uid="uid://dvie7nf8lgd5m" path="res://sprites/Tiles/Terreau1.glb" id="4_mjpqs"]
-[ext_resource type="PackedScene" uid="uid://834wx3sjc7qp" path="res://sprites/PJ/PJvox1_test2.glb" id="6_s3ey6"]
+[ext_resource type="ArrayMesh" uid="uid://buhtpmfigk72" path="res://sprites/Cube Gris_Cube Gris_Mesh.res" id="2_mjpqs"]
+[ext_resource type="ArrayMesh" uid="uid://dtnykwin376gd" path="res://sprites/PJ/PJ_v1_PJ_v1_Mesh.res" id="3_74bok"]
+[ext_resource type="PackedScene" uid="uid://bp70lvv7y4wnr" path="res://sprites/Tiles/Terreau1.glb" id="4_mjpqs"]
 
 [sub_resource type="Environment" id="Environment_s3ey6"]
 ambient_light_source = 1
@@ -15,27 +16,27 @@ height = 0.36938477
 [node name="Node3D" type="Node3D" unique_id=1877921191]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1779032917]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 73.54514, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 65.545, 0)
 layers = 3
 light_color = Color(0.994373, 0.8719924, 0.66256547, 1)
-light_energy = 10.578
-light_size = 0.959
+light_energy = 10.038
 shadow_enabled = true
-spot_range = 172.78
-spot_attenuation = 0.27
-spot_angle = 54.2
+spot_range = 128.0
+spot_attenuation = 0.15
+spot_angle = 62.662838
 spot_angle_attenuation = 0.2973018
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1397313091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9734993, 0.20000382, -46.115425)
 script = ExtResource("2_mjh5y")
-max_speed = 10
-acceleration = 50.0
-dash_speed = 20.0
+max_speed = 100
+acceleration = 1000.0
+dash_speed = 400.0
 dash_decelatation_time = 0.2
+smoke_particle = ExtResource("2_mjpqs")
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1889891793]
-transform = Transform3D(1, 0, 0, 0, 0.6427877, 0.76604444, 0, -0.76604444, 0.6427877, 0, 44.221035, 23.482672)
+transform = Transform3D(0.7071068, -0.5416752, 0.4545195, 0, 0.64278764, 0.76604444, -0.7071068, -0.5416752, 0.4545195, 28, 50.221035, 23.482672)
 environment = SubResource("Environment_s3ey6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=921396422]
@@ -43,8 +44,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0032958984, 0)
 shape = SubResource("CapsuleShape3D_ewqw7")
 debug_fill = false
 
-[node name="PJvox1_test2" parent="Player" unique_id=128828574 instance=ExtResource("6_s3ey6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.249048, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1015326767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+mesh = ExtResource("3_74bok")
 
 [node name="ground2" type="Node3D" parent="." unique_id=1341101268]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 10, 0, -10, -4.371139e-07, -0.005505562, 0.01051116, -9.3102455e-05)
